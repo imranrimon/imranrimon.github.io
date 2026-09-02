@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muhammad Imran Hossain — Ph.D. Researcher in AI/ML</title>
+<meta name="description" content="Muhammad Imran Hossain — Ph.D. researcher in AI/ML working on trustworthy AI, generative modeling, and cyber-physical systems." />
+<meta name="author" content="Muhammad Imran Hossain" />
+<meta name="color-scheme" content="light dark" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Muhammad Imran Hossain — Ph.D. Researcher in AI/ML" />
+<meta property="og:description" content="Trustworthy AI, generative modeling, and cyber-physical systems." />
+<meta property="og:url" content="https://imranrimon.github.io/" />
+<meta property="og:image" content="https://imranrimon.github.io/photo.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #faf8f4;
+    --surface: #ffffff;
+    --surface-alt: #f3efe8;
+    --border: #e3ddd1;
+    --text: #22201c;
+    --muted: #6b6459;
+    --accent: #7a2d2d;
+    --accent-soft: #f0e4e2;
+    --link: #7a2d2d;
+    --shadow: 0 1px 2px rgba(34,32,28,.05), 0 8px 24px rgba(34,32,28,.06);
+    --radius: 10px;
+    --maxw: 940px;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  [data-theme="dark"] {
+    --bg: #17150f;
+    --surface: #1f1c15;
+    --surface-alt: #26221a;
+    --border: #34301f;
+    --text: #ece7dc;
+    --muted: #a49c8b;
+    --accent: #e0a3a3;
+    --accent-soft: #33211f;
+    --link: #e0a3a3;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.4);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  :focus-visible { outline: 2.5px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* Skip link */
+  .skip {
+    position: absolute; left: -999px; top: 0; z-index: 200;
+    background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 6px;
+  }
+  .skip:focus { left: 12px; top: 12px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between; height: 64px;
+  }
+  .brand { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--text); }
+  .brand:hover { text-decoration: none; }
+  .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+  .nav-links a {
+    color: var(--muted); font-size: .92rem; font-weight: 500; padding: 8px 11px; border-radius: 6px;
+  }
+  .nav-links a:hover { color: var(--text); background: var(--surface-alt); text-decoration: none; }
+  .nav-tools { display: flex; align-items: center; gap: 6px; }
+  .icon-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--muted); cursor: pointer;
+  }
+  .icon-btn:hover { color: var(--text); border-color: var(--muted); }
+  .icon-btn svg { width: 18px; height: 18px; }
+  #navToggle { display: none; }
+
+  /* Hero */
+  .hero { padding: 72px 0 40px; }
+  .eyebrow { color: var(--accent); font-weight: 600; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 14px; }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 0 0 12px; }
+  .hero .role { font-family: var(--serif); font-style: italic; font-size: clamp(1.15rem, 3vw, 1.4rem); color: var(--muted); margin: 0 0 18px; font-weight: 400; }
+  .hero .intro { max-width: 640px; color: var(--text); margin: 0 0 8px; }
+  .hero .loc { color: var(--muted); font-size: .95rem; margin: 0 0 26px; display: flex; align-items: center; gap: 6px; }
+  .hero .loc svg { width: 15px; height: 15px; }
+
+  /* Hero layout with portrait */
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: center; }
+  .hero-photo { order: -1; justify-self: start; }
+  .hero-photo img {
+    width: 190px; height: 190px; border-radius: 50%; object-fit: cover;
+    object-position: center 30%; display: block;
+    border: 4px solid var(--surface); outline: 1px solid var(--border); box-shadow: var(--shadow);
+  }
+  @media (min-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr auto; gap: 46px; }
+    .hero-photo { order: 0; justify-self: end; }
+    .hero-photo img { width: 240px; height: 240px; }
+  }
+
+  .btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border-radius: 8px; font-size: .92rem; font-weight: 500;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  }
+  .btn:hover { border-color: var(--muted); text-decoration: none; }
+  .btn svg { width: 16px; height: 16px; }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn-primary:hover { background: color-mix(in srgb, var(--accent) 88%, #000); border-color: transparent; }
+  [data-theme="dark"] .btn-primary { color: #1a120f; }
+
+  /* Sections */
+  section { padding: 44px 0; border-top: 1px solid var(--border); }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin: 0 0 26px; }
+  .sec-head h2 { font-size: 1.7rem; margin: 0; }
+  .sec-head .num { font-family: var(--serif); font-size: .95rem; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .lead { color: var(--muted); max-width: 640px; }
+
+  /* About / interests */
+  .about-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+  @media (min-width: 760px) { .about-grid { grid-template-columns: 1.4fr 1fr; } }
+  .about p { margin-top: 0; }
+  .interests { background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; }
+  .interests h3 { margin: 0 0 12px; font-size: 1.05rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+  .tags li { font-size: .82rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); padding: 5px 11px; border-radius: 999px; }
+
+  /* News / publications */
+  .pub { display: grid; grid-template-columns: 110px 1fr; gap: 4px 20px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+  .pub:last-child { border-bottom: none; }
+  @media (max-width: 620px) { .pub { grid-template-columns: 1fr; gap: 6px; } }
+  .pub .venue { font-size: .82rem; font-weight: 600; color: var(--accent); font-family: var(--sans); letter-spacing: .02em; padding-top: 2px; }
+  .pub .p-title { font-family: var(--serif); font-size: 1.12rem; font-weight: 500; margin: 0 0 4px; }
+  .pub .authors { font-size: .9rem; color: var(--muted); margin: 0 0 6px; }
+  .pub .authors .me { color: var(--text); font-weight: 600; }
+  .pub .links a { font-size: .85rem; margin-right: 14px; display: inline-flex; align-items: center; gap: 5px; }
+  .pub .links svg { width: 13px; height: 13px; }
+  .status { display: inline-block; font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 5px; margin-left: 4px; vertical-align: middle; }
+
+  /* Projects */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+  .filter {
+    font-family: var(--sans); font-size: .85rem; font-weight: 500; cursor: pointer;
+    padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--muted);
+  }
+  .filter:hover { color: var(--text); border-color: var(--muted); }
+  .filter[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  [data-theme="dark"] .filter[aria-pressed="true"] { color: #1a120f; }
+  .cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px 22px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+  }
+  .card h3 { font-size: 1.1rem; margin: 0 0 8px; }
+  .card .kicker { font-size: .74rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
+  .card p { font-size: .93rem; color: var(--muted); margin: 0 0 12px; flex: 1; }
+  .card .card-foot { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; font-size: .84rem; }
+  .card .card-foot a { display: inline-flex; align-items: center; gap: 5px; }
+  .card .card-foot svg { width: 13px; height: 13px; }
+  .card .stat { color: var(--muted); font-style: italic; font-family: var(--serif); }
+  .hidden { display: none !important; }
+
+  /* Timeline (experience + education) */
+  .timeline { border-left: 2px solid var(--border); margin-left: 6px; padding-left: 0; }
+  .t-item { position: relative; padding: 0 0 26px 26px; }
+  .t-item:last-child { padding-bottom: 0; }
+  .t-item::before {
+    content: ""; position: absolute; left: -7px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg);
+  }
+  .t-item .t-date { font-size: .82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .t-item h3 { font-size: 1.08rem; margin: 3px 0 2px; }
+  .t-item .t-org { font-size: .95rem; color: var(--accent); font-weight: 500; margin: 0 0 6px; }
+  .t-item p { font-size: .92rem; color: var(--muted); margin: 0; }
+  .t-item .t-meta { font-size: .84rem; color: var(--text); font-style: italic; font-family: var(--serif); }
+
+  /* Skills */
+  .skill-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  @media (min-width: 640px) { .skill-grid { grid-template-columns: 1fr 1fr; } }
+  .skill-block h3 { font-size: 1rem; margin: 0 0 10px; color: var(--text); }
+  .skill-block .tags li { background: var(--surface-alt); }
+
+  /* Leadership */
+  .service-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 10px; }
+  @media (min-width: 640px) { .service-list { grid-template-columns: 1fr 1fr; } }
+  .service-list li { display: flex; gap: 10px; align-items: flex-start; font-size: .95rem; }
+  .service-list li svg { width: 16px; height: 16px; color: var(--accent); flex: none; margin-top: 4px; }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--border); background: var(--surface-alt); padding: 36px 0; margin-top: 20px; }
+  .foot-inner { display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; align-items: center; }
+  .foot-social { display: flex; gap: 8px; }
+  .foot-social a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--muted);
+  }
+  .foot-social a:hover { color: var(--accent); border-color: var(--accent); }
+  .foot-social svg { width: 18px; height: 18px; }
+  .copyright { font-size: .88rem; color: var(--muted); }
+
+  /* Mobile nav */
+  @media (max-width: 780px) {
+    #navToggle { display: inline-flex; }
+    .nav-links {
+      position: absolute; top: 64px; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 2px;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      padding: 12px 24px 18px; box-shadow: var(--shadow);
+      display: none;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 11px 12px; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Muhammad Imran Hossain</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navMenu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="icon-btn" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div id="top"></div>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-name">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+    <p class="eyebrow">Ph.D. Researcher · AI / Machine Learning</p>
+    <h1 id="hero-name">Muhammad Imran Hossain</h1>
+    <p class="role">Trustworthy AI, Generative Modeling, and Cyber-Physical Systems</p>
+    <p class="intro">I build secure, trustworthy, and adaptive machine-learning systems — from generative models for scientific discovery to anomaly detection in smart grids and healthcare AI.</p>
+    <p class="loc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Fort Worth, TX, USA
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="mailto:mh00145@mix.wvu.edu" aria-label="Email Muhammad Imran Hossain">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Email
+      </a>
+      <a class="btn" href="https://scholar.google.com/citations?user=dRdifF4AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 8l11 6 9-4.9V17h2V8L12 2zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z"/></svg>
+        Scholar
+      </a>
+      <a class="btn" href="https://github.com/imranrimon" target="_blank" rel="noopener" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="https://www.linkedin.com/in/muhammad-imran-hossain-rimon" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.7H9.1V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    </div>
+    <div class="hero-photo">
+      <img src="photo.jpg" alt="Portrait of Muhammad Imran Hossain" width="240" height="240" />
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">01</span><h2 id="about-h">About</h2></div>
+    <div class="about-grid">
+      <div class="about">
+        <p>I am a Ph.D. researcher in Computer Science working across trustworthy and secure AI, generative modeling, and cyber-physical systems. My work spans PMU/SCADA anomaly detection, cyber-power event analysis, multimodal signal analytics, non-contact physiological monitoring, and deep generative models for scientific discovery.</p>
+        <p>I work with transformers, GANs, diffusion and flow models, graph neural networks, foundation models, and time-series methods — with a strong emphasis on reproducible ML workflows in Python, PyTorch, TensorFlow, and MATLAB. I am especially interested in secure, adaptive AI for cybersecurity, intelligent networks, healthcare, and real-world decision support.</p>
+      </div>
+      <aside class="interests" aria-label="Research interests">
+        <h3>Research Interests</h3>
+        <ul class="tags">
+          <li>Trustworthy &amp; Secure AI</li>
+          <li>Generative Modeling</li>
+          <li>Diffusion &amp; Flow Models</li>
+          <li>Cyber-Physical Systems</li>
+          <li>Smart Grids</li>
+          <li>Healthcare AI</li>
+          <li>Biomedical Signal Processing</li>
+          <li>Sign-Language Recognition</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" aria-labelledby="pub-h">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">02</span><h2 id="pub-h">Publications</h2></div>
+    <p class="lead" style="margin-bottom:24px">Selected peer-reviewed and preprint work. Full list on <a href="https://scholar.google.com/citations?user=dRdifF4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+
+    <div class="pub">
+      <div class="venue">IEEE TPEC 2026</div>
+      <div>
+        <p class="p-title">Battery Health Prognosis Using Physics-Informed Neural Network with Quantum Feature Mapping</p>
+        <p class="authors"><span class="me">M. I. Hossain</span>, M. F. Rafy, S. K. Solanki, A. K. Srivastava</p>
+        <p class="links">
+          <a href="https://arxiv.org/abs/2604.10362" target="_blank" rel="noopener" aria-label="arXiv preprint (2604.10362)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>
+            arXiv:2604.10362
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="venue">NAPS · IEEE 2025</div>
+      <div>
+        <p class="p-title">Unsupervised Detection of Spatiotemporal Anomalies in PMU Data Using Transformer-Based BiGAN</p>
+        <p class="authors"><span class="me">M. I. Hossain</span>, J. Solanki, S. K. Solanki</p>
+        <p class="authors" style="margin:0">57th North American Power Symposium (NAPS)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" aria-labelledby="proj-h">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">03</span><h2 id="proj-h">Projects</h2></div>
+    <p class="lead" style="margin-bottom:20px">Funded research projects and selected academic work in generative modeling, cyber-physical systems, and healthcare AI.</p>
+
+    <div class="filters" role="group" aria-label="Filter projects by category">
+      <button class="filter" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter" data-filter="funded" aria-pressed="false">Funded Research</button>
+      <button class="filter" data-filter="genai" aria-pressed="false">Generative AI</button>
+      <button class="filter" data-filter="cps" aria-pressed="false">Cyber-Physical</button>
+      <button class="filter" data-filter="health" aria-pressed="false">Healthcare / Vision</button>
+    </div>
+
+    <div class="cards" id="projectGrid">
+      <!-- Funded -->
+      <article class="card" data-cat="funded cps">
+        <p class="kicker">Funded · ARC ARISE (WVU)</p>
+        <h3>Hybrid Modeling &amp; Real-Time Emulation of BESS</h3>
+        <p>Typhoon HIL emulator integrating equivalent-circuit and electrochemical battery models; EKF/UKF SOC/SOH estimation; grid integration on a modified IEEE 123-node system with PV + BESS.</p>
+        <div class="card-foot"><span class="stat">Battery energy storage · HIL</span></div>
+      </article>
+
+      <article class="card" data-cat="funded health">
+        <p class="kicker">Funded · NSF</p>
+        <h3>Multi-Modal Heart Disease Prediction from Face Videos</h3>
+        <p>Real-time rPPG extraction via 3D CNN; ECG synthesis with MultiResUNet and a 1D Cyclic Swin UNet within a GAN framework for non-contact cardiac screening.</p>
+        <div class="card-foot"><span class="stat">rPPG · GAN · ECG synthesis</span></div>
+      </article>
+
+      <article class="card" data-cat="funded health">
+        <p class="kicker">Funded · Centennial Research Grant</p>
+        <h3>Non-Contact Respiratory Monitoring from Video</h3>
+        <p>Vision-based pediatric respiratory monitoring integrated with telemedicine for low-resource clinical settings.</p>
+        <div class="card-foot"><span class="stat">Computer vision · Telemedicine</span></div>
+      </article>
+
+      <!-- GenAI -->
+      <article class="card" data-cat="genai">
+        <p class="kicker">Generative AI · Course project, 2025</p>
+        <h3>Expressive Latent Priors for VAEs</h3>
+        <p>NVAE combined with an IMM latent prior, trained and evaluated on CelebA to study richer latent structure.</p>
+        <div class="card-foot"><span class="stat">VAE · Latent priors</span></div>
+      </article>
+
+      <!-- Cyber-physical / trustworthy -->
+      <article class="card" data-cat="cps">
+        <p class="kicker">Trustworthy AI · 2025</p>
+        <h3>Trustworthy AI for Autonomous Network Defense</h3>
+        <p>UEBA, NLP-based indicator-of-compromise extraction, reinforcement learning, and explainable AI for autonomous response to network attacks.</p>
+        <div class="card-foot"><span class="stat">UEBA · RL · XAI</span></div>
+      </article>
+
+      <!-- Health / vision -->
+      <article class="card" data-cat="health">
+        <p class="kicker">Audio ML · 2025</p>
+        <h3>Music Genre Classification with Foundation Audio Models</h3>
+        <p>GTZAN and FMA benchmarks with AST, MERT, HuBERT, Wav2Vec2, and PANNs foundation audio encoders.</p>
+        <div class="card-foot"><span class="stat">Foundation models · Audio</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" aria-labelledby="exp-h">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">04</span><h2 id="exp-h">Experience</h2></div>
+    <div class="timeline">
+      <div class="t-item">
+        <p class="t-date">Aug 2026 — Present</p>
+        <h3>Graduate Teaching Assistant</h3>
+        <p class="t-org">Texas Christian University</p>
+        <p>TA for Deep Learning; help-desk support in programming, Python, data analytics, debugging, and data structures.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">Aug 2024 — May 2026</p>
+        <h3>Graduate Teaching Assistant</h3>
+        <p class="t-org">West Virginia University</p>
+        <p>Instructed EE/CE labs in circuits, digital logic, digital electronics, and microprocessor systems.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">Aug 2023 — Jul 2024 · May 2025 — Jul 2025</p>
+        <h3>Graduate Research Assistant</h3>
+        <p class="t-org">West Virginia University</p>
+        <p>ML and data analytics for physiological signal modeling, ECG/PPG analysis, and anomaly detection in cyber-power systems.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">Jan 2022 — Dec 2022</p>
+        <h3>Research Assistant</h3>
+        <p class="t-org">University of Dhaka</p>
+        <p>Computer-vision respiratory monitoring for pediatric healthcare and telemedicine.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">Dec 2018 — Aug 2021</p>
+        <h3>Co-founder &amp; Mentor</h3>
+        <p class="t-org">ROOTsEdu Bangladesh</p>
+        <p>Mentored students in physics, mathematics, electrical engineering, programming, and algorithms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" aria-labelledby="edu-h">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">05</span><h2 id="edu-h">Education</h2></div>
+    <div class="timeline">
+      <div class="t-item">
+        <p class="t-date">Aug 2026 — Ongoing</p>
+        <h3>Ph.D. in Computer Science</h3>
+        <p class="t-org">Texas Christian University, Fort Worth, TX</p>
+        <p><span class="t-meta">Research:</span> Predictive Runtime Assurance and Mission-Aware Containment for Autonomous Cyber Agents.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">Aug 2023 — Aug 2026 · CGPA 3.88/4.00</p>
+        <h3>M.S. in Electrical Engineering</h3>
+        <p class="t-org">West Virginia University</p>
+        <p><span class="t-meta">Thesis:</span> Multi-Timescale Monitoring for Resilient Smart Grids — PMU Anomaly Detection and Battery State-of-Health Estimation.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">Sept 2022 · CGPA 3.70/4.00</p>
+        <h3>M.S. in Biomedical Engineering</h3>
+        <p class="t-org">University of Dhaka, Bangladesh</p>
+        <p><span class="t-meta">Project:</span> Video-based non-contact monitoring of respiratory functionalities.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">Oct 2018 · CGPA 2.88/4.00</p>
+        <h3>B.Sc. in Electrical &amp; Electronic Engineering</h3>
+        <p class="t-org">Bangladesh University of Engineering &amp; Technology (BUET)</p>
+        <p><span class="t-meta">Thesis:</span> A study of Schumann Electromagnetic Resonance between Earth and its Ionosphere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" aria-labelledby="skills-h">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">06</span><h2 id="skills-h">Skills</h2></div>
+    <div class="skill-grid">
+      <div class="skill-block">
+        <h3>Programming</h3>
+        <ul class="tags"><li>Python</li><li>MATLAB</li><li>C / C++</li><li>Verilog</li><li>Assembly</li></ul>
+      </div>
+      <div class="skill-block">
+        <h3>ML Frameworks</h3>
+        <ul class="tags"><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>PyTorch Lightning</li><li>Hugging Face</li><li>NumPy</li><li>Pandas</li><li>OpenCV</li><li>Matplotlib</li></ul>
+      </div>
+      <div class="skill-block">
+        <h3>AI / ML Areas</h3>
+        <ul class="tags"><li>Deep Learning</li><li>Transformers</li><li>Generative AI</li><li>Diffusion Models</li><li>Graph Neural Networks</li><li>Foundation Models</li><li>Time-Series Modeling</li><li>Anomaly Detection</li></ul>
+      </div>
+      <div class="skill-block">
+        <h3>Research Applications</h3>
+        <ul class="tags"><li>Healthcare AI</li><li>Biomedical Signal Processing</li><li>Computer Vision</li><li>Cyber-Physical Systems</li><li>Smart Grids</li><li>Energy Systems</li><li>Trustworthy AI</li></ul>
+      </div>
+      <div class="skill-block">
+        <h3>Systems &amp; Tools</h3>
+        <ul class="tags"><li>Linux</li><li>SLURM / HPC</li><li>LaTeX</li><li>Simulink / Simscape</li><li>OpenDSS</li><li>PowerWorld</li><li>Typhoon HIL</li><li>RTDS</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="service" aria-labelledby="serv-h">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">07</span><h2 id="serv-h">Leadership &amp; Service</h2></div>
+    <ul class="service-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>President, Bangladesh Students' Association, West Virginia University</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>President, BADHAN Blood Donating Organization, BUET</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Secretary, BUET Brainiacs</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Volunteer, Bangladesh Math Olympiad Society</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>President's Scout Award recipient, Bangladesh Scouts, 2010</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <p class="copyright">© <span id="year">2026</span> Muhammad Imran Hossain. Built with plain HTML &amp; CSS.</p>
+    <div class="foot-social">
+      <a href="mailto:mh00145@mix.wvu.edu" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      </a>
+      <a href="https://scholar.google.com/citations?user=dRdifF4AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 8l11 6 9-4.9V17h2V8L12 2zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z"/></svg>
+      </a>
+      <a href="https://github.com/imranrimon" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/muhammad-imran-hossain-rimon" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.7H9.1V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Theme toggle (persisted, respects system pref)
+  (function () {
+    var root = document.documentElement;
+    var moon = document.getElementById('iconMoon');
+    var sun = document.getElementById('iconSun');
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    apply(theme);
+    document.getElementById('themeToggle').addEventListener('click', function () {
+      theme = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
+      apply(theme);
+      try { localStorage.setItem('theme', theme); } catch (e) {}
+    });
+    function apply(t) {
+      root.setAttribute('data-theme', t);
+      var dark = t === 'dark';
+      moon.style.display = dark ? 'none' : '';
+      sun.style.display = dark ? '' : 'none';
+    }
+  })();
+
+  // Mobile nav
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('navMenu');
+    toggle.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+
+  // Project filter
+  (function () {
+    var buttons = document.querySelectorAll('.filter');
+    var cards = document.querySelectorAll('#projectGrid .card');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        var f = btn.getAttribute('data-filter');
+        cards.forEach(function (c) {
+          var show = f === 'all' || c.getAttribute('data-cat').split(' ').indexOf(f) !== -1;
+          c.classList.toggle('hidden', !show);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
