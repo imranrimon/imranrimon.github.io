@@ -108,6 +108,12 @@
   .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 0 0 12px; }
   .hero .role { font-family: var(--serif); font-style: italic; font-size: clamp(1.15rem, 3vw, 1.4rem); color: var(--muted); margin: 0 0 18px; font-weight: 400; }
   .hero .intro { max-width: 640px; color: var(--text); margin: 0 0 8px; }
+  .hero-quote {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem); line-height: 1.4;
+    color: var(--text); border-left: 3px solid var(--accent);
+    padding-left: 16px; margin: 16px 0 22px; max-width: 600px;
+  }
   .hero .loc { color: var(--muted); font-size: .95rem; margin: 0 0 26px; display: flex; align-items: center; gap: 6px; }
   .hero .loc svg { width: 15px; height: 15px; }
 
@@ -284,6 +290,7 @@
     <h1 id="hero-name">Muhammad Imran Hossain</h1>
     <p class="role">AI Safety &amp; Runtime Assurance for Autonomous Agents · Generative Modeling · Cyber-Physical Systems</p>
     <p class="intro">Right now I'm working on predictive runtime assurance and mission-aware containment for autonomous AI agents — making sure they stay safe and within their intended limits as they act. Earlier, my research was on generative models (efficient diffusion- and flow-based methods for scientific data) and anomaly detection for power grids and physiological signals.</p>
+    <p class="hero-quote">Safe actions don't necessarily compose into safe missions.</p>
     <p class="loc">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       Fort Worth, TX, USA
